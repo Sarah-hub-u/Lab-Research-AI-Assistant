@@ -78,7 +78,7 @@ Contributions are welcome! Please see CONTRIBUTING.md for guidelines.
 📄 License
 MIT License - see LICENSE for details.
 👨‍💻 Author
-Built by [Your Name] - Bioengineering Student
+Built by Sarah Farrell - Bioengineering Student
 
 🔗 LinkedIn: not yet
 📧 Email: farrell.sar@northeastern.edu
