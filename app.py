@@ -7,7 +7,7 @@ import pandas as pd
 from datetime import datetime
 
 
-
+from ai_processor import ResearchKnowledgeBase, ResearchAI 
 import os
 
 # Page config
