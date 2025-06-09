@@ -1,0 +1,14 @@
+env# Database Configuration
+SUPABASE_URL=https://qqfsxntyinanhutdznts.supabase.co
+SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxZnN4bnR5aW5hbmh1dGR6bnRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkzNjA0MzAsImV4cCI6MjA2NDkzNjQzMH0.zN803irtPItd1Gcob7Q5XI5BSLg_ktfGu23MpIrLznc
+
+# Vector Database  
+WEAVIATE_URL=egdaz7w1tzqj83zt22p3na.c0.us-east1.gcp.weaviate.cloud
+
+
+# Email for PubMed API
+PUBMED_EMAIL=farrell.sar@northeastern.edu
+
+# App Configuration
+DEBUG=False
+MAX_PAPERS_PER_QUERY=1000
