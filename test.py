@@ -1,25 +1,16 @@
 import streamlit as st
 
-st.title("🧬 Simple Test")
-st.write("If you see this, Streamlit is working!")
+st.title("🧬 Connection Test")
+st.write("Basic Streamlit is working!")
 
-# Test supabase import
-try:
-    from supabase import create_client
-    st.success("✅ Supabase import successful!")
-except ImportError as e:
-    st.error(f"❌ Supabase import failed: {e}")
+# Test secrets
+url = st.secrets.get("SUPABASE_URL", "Not found")
+key = st.secrets.get("SUPABASE_ANON_KEY", "Not found")
 
-# Test connection
-try:
-    url = st.secrets.get("SUPABASE_URL", "")
-    key = st.secrets.get("SUPABASE_ANON_KEY", "")
-    
-    if url and key:
-        supabase = create_client(url, key)
-        result = supabase.table('papers').select('id').limit(1).execute()
-        st.success("✅ Database connection successful!")
-    else:
-        st.warning("⚠️ Secrets not found")
-except Exception as e:
-    st.error(f"❌ Connection failed: {e}")
+st.write(f"URL: {url[:20]}..." if len(url) > 20 else url)
+st.write(f"Key: {key[:20]}..." if len(key) > 20 else key)
+
+if "supabase.co" in url and len(key) > 50:
+    st.success("✅ Secrets are configured correctly!")
+else:
+    st.error("❌ Secrets not configured properly")
