@@ -5,7 +5,7 @@ import streamlit as st
 import json
 import pandas as pd
 from datetime import datetime
-import plotly.express as px
+
 import plotly.graph_objects as go
 from ai_processor import ResearchKnowledgeBase, ResearchAI
 import os
