@@ -6,7 +6,7 @@ import json
 import pandas as pd
 from datetime import datetime
 
-import plotly.graph_objects as go
+
 from ai_processor import ResearchKnowledgeBase, ResearchAI
 import os
 
