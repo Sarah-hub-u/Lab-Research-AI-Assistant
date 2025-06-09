@@ -2,6 +2,7 @@
 # Run with: streamlit run research_ai_app.py
 
 import streamlit as st
+import plotly.express as px
 import json
 import pandas as pd
 from datetime import datetime
