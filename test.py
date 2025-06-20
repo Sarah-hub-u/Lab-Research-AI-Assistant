@@ -8,8 +8,7 @@ def search_papers(query, limit=3):
     """Search papers using direct Supabase API"""
     try:
         url = st.secrets["https://qqfsxntyinanhutdznts.supabase.co"]
-        key = st.secrets["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxZnN4bnR5aW5hbmh1dGR6bnRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkzNjA0MzAsImV4cCI6MjA2NDkzNjQzMH0.zN803irtPItd1Gcob7Q5XI5BSLg_ktfGu23MpIrLznc
-"]
+        key = st.secrets["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFxZnN4bnR5aW5hbmh1dGR6bnRzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkzNjA0MzAsImV4cCI6MjA2NDkzNjQzMH0.zN803irtPItd1Gcob7Q5XI5BSLg_ktfGu23MpIrLznc"]
         
         headers = {
             'apikey': key,
