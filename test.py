@@ -69,13 +69,15 @@ all_papers = get_all_papers()
 if all_papers:
     st.success(f"✅ Connected! Found {len(all_papers)} papers in database")
     
-    # Show sample papers
-    with st.expander("📄 Sample Papers in Database"):
-        for paper in all_papers[:3]:
-            st.write(f"**{paper['title']}**")
-            st.write(f"Authors: {paper['authors']}")
-            st.write(f"Journal: {paper['journal']} ({paper['year']})")
-            st.write("---")
+ # Show sample papers
+with st.expander("📄 Sample Papers in Database"):
+    for paper in all_papers[:3]:
+        st.write(f"**{paper.get('title', 'No title')}**")
+        st.write(f"Authors: {paper.get('authors', 'No authors')}")
+        st.write(f"Journal: {paper.get('journal', 'No journal')} ({paper.get('year', 'No year')})")
+        if paper.get('abstract'):
+            st.write(f"Abstract: {paper['abstract'][:200]}...")
+        st.write("---")
 else:
     st.error("❌ No connection to database")
     st.stop()
