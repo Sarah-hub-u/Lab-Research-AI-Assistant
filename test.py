@@ -1,24 +1,32 @@
 import streamlit as st
+import subprocess
+import sys
 
-st.title("🧬 Package Installation Test")
-st.write("Basic Streamlit is working!")
+st.title("🧬 Manual Package Installation Test")
 
-# Test supabase import
+# Try to install supabase manually
+if st.button("Install Supabase Package"):
+    with st.spinner("Installing supabase..."):
+        try:
+            subprocess.check_call([sys.executable, "-m", "pip", "install", "supabase"])
+            st.success("✅ Supabase installed!")
+        except Exception as e:
+            st.error(f"❌ Installation failed: {e}")
+
+# Test import
 try:
     from supabase import create_client
-    st.success("✅ Supabase package installed successfully!")
+    st.success("✅ Supabase imported successfully!")
     
     # Test connection
-    url = st.secrets["SUPABASE_URL"]
+    url = st.secrets["SUPABASE_URL"] 
     key = st.secrets["SUPABASE_ANON_KEY"]
     
     supabase = create_client(url, key)
-    result = supabase.table('papers').select('id').limit(1).execute()
-    
-    paper_count = len(supabase.table('papers').select('id').execute().data)
-    st.success(f"✅ Database connected! Found {paper_count} papers")
+    papers = supabase.table('papers').select('id').execute().data
+    st.success(f"✅ Connected! Found {len(papers)} papers")
     
 except ImportError:
-    st.error("❌ Supabase package not installed")
+    st.warning("⚠️ Supabase not installed yet - click button above")
 except Exception as e:
-    st.error(f"❌ Connection error: {e}")
+    st.error(f"❌ Error: {e}")
